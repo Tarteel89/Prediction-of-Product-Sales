@@ -86,13 +86,12 @@ Prediction-of-Product-Sales/
 ├── Sales Prediction.ipynb               # EDA and feature engineering
 ├── Sales prediction 4.ipynb             # Model building iteration
 ├── Sales_prediction_5.ipynb             # Final model and evaluation
-├── images/
-│   ├── heatmap.png
-│   ├── histogram.png
-│   ├── feat_Item_MRP_multivariate.png
-│   ├── feat_Outlet_Type_multivariate.png
-│   ├── feat_Item_Type_multivariate.png
-│   └── feat_Outlet_Location_Type_multivariate.png
+├── heatmap.png
+├── histogram.png
+├── feat_Item_MRP_multivariate.png
+├── feat_Outlet_Type_multivariate.png
+├── feat_Item_Type_multivariate.png
+├── feat_Outlet_Location_Type_multivariate.png
 └── README.md
 ```
 
@@ -123,32 +122,32 @@ Prediction-of-Product-Sales/
 ## 📊 Visualizations
 
 ### Correlation Heatmap
-![Correlation Heatmap](images/heatmap.png)
+![Correlation Heatmap](heatmap.png)
 
 Shows the correlation between all numerical features and the target variable `Item_Outlet_Sales`. `Item_MRP` shows the strongest positive correlation with sales.
 
 ### Item_MRP vs Sales
-![Item MRP vs Sales](images/feat_Item_MRP_multivariate.png)
+![Item MRP vs Sales](feat_Item_MRP_multivariate.png)
 
 Scatter plot showing the relationship between the product's maximum retail price and its sales. A clear positive trend confirms that higher-priced items tend to generate more revenue.
 
 ### Outlet_Type vs Sales
-![Outlet Type vs Sales](images/feat_Outlet_Type_multivariate.png)
+![Outlet Type vs Sales](feat_Outlet_Type_multivariate.png)
 
 Box plot comparing sales distribution across different outlet types. Supermarket Type 3 consistently shows the highest median sales, while Grocery Stores have the lowest.
 
 ### Item_Type vs Sales
-![Item Type vs Sales](images/feat_Item_Type_multivariate.png)
+![Item Type vs Sales](feat_Item_Type_multivariate.png)
 
 Box plot showing how sales vary across product categories. Certain categories such as Seafood and Starchy Foods show notably higher median sales.
 
 ### Outlet_Location_Type vs Sales
-![Outlet Location vs Sales](images/feat_Outlet_Location_Type_multivariate.png)
+![Outlet Location vs Sales](feat_Outlet_Location_Type_multivariate.png)
 
 Box plot comparing sales across Tier 1, 2, and 3 cities, revealing how store location affects product performance.
 
 ### Distribution of Item Outlet Sales
-![Sales Distribution](images/histogram.png)
+![Sales Distribution](histogram.png)
 
 Histogram of the target variable showing a right-skewed distribution, indicating that most items have moderate sales with a few high-performing outliers.
 
@@ -172,5 +171,4 @@ Histogram of the target variable showing a right-skewed distribution, indicating
 
 ## 📄 License
 
-This project is open-source and available under the [MIT License](LICENSE).# Prediction-of-Product-Sales
-this project will be a sales prediction for food items sold at various stores.
+This project is open-source and available under the [MIT License](LICENSE).
