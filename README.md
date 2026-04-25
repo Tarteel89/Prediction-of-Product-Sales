@@ -14,7 +14,7 @@ The final model enables retailers to anticipate sales performance by store type,
 
 # 💡 Key Insights
 
-1. Item Price (MRP) is the Strongest Predictor of Sales
+# 1. Item Price (MRP) is the Strongest Predictor of Sales
 
 ![Item MRP vs Sales](images/feat_Item_MRP_multivariate.png)
 
@@ -22,7 +22,7 @@ A clear positive relationship exists between a product's Maximum Retail Price an
 This insight suggests that premium-priced products are reliable revenue drivers and that retailers should ensure adequate stock levels for high-MRP items.
 
 
-2. Supermarkets Dramatically Outperform Grocery Stores
+# 2. Supermarkets Dramatically Outperform Grocery Stores
 
 ![Outlet Type vs Sales](images/feat_Outlet_Type_multivariate.png)
 
@@ -30,7 +30,8 @@ Store type has a major impact on sales volume. Supermarket Type 3 records the hi
 This finding highlights that store format — not just product type or price — is a critical factor in forecasting. Inventory strategies should differ substantially between store categories.
 
 
-3. Outlet_Location_Type vs Sales
+
+# 3. Outlet_Location_Type vs Sales
    
 ![Outlet Location vs Sales](images/feat_Outlet_Location_Type_multivariate.png)
 
@@ -41,14 +42,16 @@ This means for business owners:
 Expanding in Tier 3 can be an opportunity rather than a risk. Competition in Tier 1 is higher and can eat into profits, while opening costs in Tier 3 are lower + similar sales = better profit margin
 
 
-4. Distribution of Item Outlet Sales
+
+# 4. Distribution of Item Outlet Sales
  
 ![Sales Distribution](images/histogram.png)
 
  Histogram of the target variable showing a right-skewed distribution, indicating that most items have moderate sales with a few high-performing outliers.
 
 
-5. Correlation Heatmap
+
+# 5. Correlation Heatmap
   
 ![Correlation Heatmap](images/heatmap.png)
 
