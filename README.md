@@ -1,173 +1,42 @@
-# 🛒 Prediction of Product Sales
+🛒 Retail Sales Prediction
 
-> A machine learning project to predict sales of food items sold across various retail stores.
+A machine learning project to predict product-level sales across retail store outlets using historical item and store data.
 
----
 
-## 📌 Project Overview
+📌 Project Overview
+Retailers frequently struggle to forecast demand accurately — leading to costly overstocking or stockouts. This project addresses that challenge by building and comparing regression models that predict Item Outlet Sales based on product characteristics and store attributes.
+The final model enables retailers to anticipate sales performance by store type, location, and product category — supporting smarter inventory and pricing decisions.
 
-This project aims to build a predictive model that estimates the sales (`Item_Outlet_Sales`) of food products sold at different store outlets. By analyzing historical data, the model helps retailers understand key factors that drive sales and make better inventory and pricing decisions.
+💡 Key Insights
+1. Item Price (MRP) is the Strongest Predictor of Sales
+A clear positive relationship exists between a product's Maximum Retail Price and its total outlet sales. Higher-priced items consistently generate more revenue across all store types and locations.
+Show Image
+This insight suggests that premium-priced products are reliable revenue drivers, and that retailers should ensure adequate stock levels for high-MRP items.
 
----
+2. Supermarkets Dramatically Outperform Grocery Stores
+Store type has a major impact on sales volume. Supermarket Type 3 records the highest median sales, while Grocery Stores consistently show the lowest — often by a significant margin.
+Show Image
+This finding highlights that store format — not just product type or price — is a critical factor in forecasting. Inventory strategies should differ substantially between store categories.
 
-## 🎯 Business Problem
+📊 Model Summary & Evaluation
+Three regression models were trained and evaluated on a held-out test set:
+ModelTrain R²Test R²Fit AssessmentLinear Regression~0.56~0.55Slight underfit — too simple for this dataRandom Forest (Default)~0.94~0.59Overfitting — memorises training dataRandom Forest (Tuned)~0.80~0.61✅ Best balance — recommended model
+⭐ Recommended Model: Tuned Random Forest
+The tuned Random Forest was selected as the final model. It was optimised using GridSearchCV across key hyperparameters (number of trees, max depth, minimum samples to split), reducing the overfitting seen in the default version while maintaining strong predictive performance.
+What the metrics mean in practice:
 
-Retailers often struggle to forecast product demand accurately, leading to overstocking or stockouts. This project addresses that challenge by using machine learning regression models to predict item-level sales based on product and store attributes.
+R² ≈ 0.61 — The model correctly explains about 61% of the variation in product sales across stores. For every 10 times you ask "why does Store A outsell Store B?", the model identifies the right reason approximately 6 times.
+RMSE ≈ $1,000 — On average, predictions are off by about $1,000 per product-outlet combination. RMSE was chosen as the secondary metric because large prediction errors carry higher business risk (e.g. underestimating a top seller causes stockouts), and RMSE penalises large errors more heavily than MAE.
 
----
 
-## 📂 Dataset
+📂 Dataset
+The dataset contains product and store attributes for food items sold across multiple retail outlets. Key features include item weight, fat content, visibility, MRP, product category, store size, location tier, and outlet type. The target variable is Item_Outlet_Sales.
 
-The dataset contains information about food items and store outlets. Key features include:
+🛠️ Tech Stack
+Python · Pandas · NumPy · Matplotlib · Seaborn · Scikit-learn
 
-| Feature | Description |
-|---|---|
-| `Item_Identifier` | Unique product ID |
-| `Item_Weight` | Weight of the product |
-| `Item_Fat_Content` | Low Fat / Regular |
-| `Item_Visibility` | % of total display area allocated to the product |
-| `Item_Type` | Category of the product (e.g., Dairy, Snack Foods) |
-| `Item_MRP` | Maximum Retail Price |
-| `Outlet_Identifier` | Unique store ID |
-| `Outlet_Establishment_Year` | Year the store was established |
-| `Outlet_Size` | Size of the store (Small / Medium / High) |
-| `Outlet_Location_Type` | Tier of the city |
-| `Outlet_Type` | Grocery Store / Supermarket Type |
-| `Item_Outlet_Sales` | **Target variable** — sales of the product |
-
----
-
-## 🔧 Workflow
-
-1. **Data Loading & Exploration** — Understanding the structure and distribution of the data
-2. **Data Cleaning** — Handling missing values in `Item_Weight` and `Outlet_Size`
-3. **Exploratory Data Analysis (EDA)** — Visualizing patterns and correlations
-4. **Feature Engineering** — Encoding categorical variables, fixing inconsistencies
-5. **Model Building** — Training regression models
-6. **Model Evaluation** — Comparing models using RMSE and R² score
-
----
-
-## 🤖 Models Used
-
-- **Linear Regression** — Baseline model
-- **Decision Tree Regressor** — Captures non-linear relationships
-- **Random Forest Regressor** — Ensemble method for improved accuracy
-
----
-
-## 📊 Evaluation Metrics
-
-| Metric | Description |
-|---|---|
-| **R² Score** | Proportion of variance explained by the model |
-| **RMSE** | Root Mean Squared Error — lower is better |
-| **MAE** | Mean Absolute Error |
-
----
-
-## 🛠️ Tech Stack
-
-- **Python 3**
-- **Pandas** — Data manipulation
-- **NumPy** — Numerical computation
-- **Matplotlib / Seaborn** — Data visualization
-- **Scikit-learn** — Machine learning models and preprocessing
-- **Jupyter Notebook** — Development environment
-
----
-
-## 📁 Project Structure
-
-```
-Prediction-of-Product-Sales/
-│
-├── Prediction of product sales .ipynb   # Initial exploration notebook
-├── Sales Prediction.ipynb               # EDA and feature engineering
-├── Sales prediction 4.ipynb             # Model building iteration
-├── Sales_prediction_5.ipynb             # Final model and evaluation
-├── heatmap.png
-├── histogram.png
-├── feat_Item_MRP_multivariate.png
-├── feat_Outlet_Type_multivariate.png
-├── feat_Item_Type_multivariate.png
-├── feat_Outlet_Location_Type_multivariate.png
-└── README.md
-```
-
----
-
-## 🚀 How to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Tarteel89/Prediction-of-Product-Sales.git
-   cd Prediction-of-Product-Sales
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install pandas numpy matplotlib seaborn scikit-learn jupyter
-   ```
-
-3. Launch Jupyter Notebook:
-   ```bash
-   jupyter notebook
-   ```
-
-4. Open `Sales_prediction_5.ipynb` for the final version of the project.
-
----
-
-## 📊 Visualizations
-
-### Correlation Heatmap
-![Correlation Heatmap](images/heatmap.png)
-
-Shows the correlation between all numerical features and the target variable `Item_Outlet_Sales`. `Item_MRP` shows the strongest positive correlation with sales.
-
-### Item_MRP vs Sales
-![Item MRP vs Sales](images/feat_Item_MRP_multivariate.png)
-
-Scatter plot showing the relationship between the product's maximum retail price and its sales. A clear positive trend confirms that higher-priced items tend to generate more revenue.
-
-### Outlet_Type vs Sales
-![Outlet Type vs Sales](images/feat_Outlet_Type_multivariate.png)
-
-Box plot comparing sales distribution across different outlet types. Supermarket Type 3 consistently shows the highest median sales, while Grocery Stores have the lowest.
-
-### Item_Type vs Sales
-![Item Type vs Sales](images/feat_Item_Type_multivariate.png)
-
-Box plot showing how sales vary across product categories. Certain categories such as Seafood and Starchy Foods show notably higher median sales.
-
-### Outlet_Location_Type vs Sales
-![Outlet Location vs Sales](images/feat_Outlet_Location_Type_multivariate.png)
-
-Box plot comparing sales across Tier 1, 2, and 3 cities, revealing how store location affects product performance.
-
-### Distribution of Item Outlet Sales
-![Sales Distribution](images/histogram.png)
-
-Histogram of the target variable showing a right-skewed distribution, indicating that most items have moderate sales with a few high-performing outliers.
-
----
-
-## 📈 Key Insights
-
-- **Item MRP** is one of the strongest predictors of sales.
-- **Outlet Type** significantly influences item sales — Supermarkets outperform Grocery Stores.
-- Items with **higher visibility** don't always lead to higher sales, suggesting other factors play a larger role.
-- **Outlet age** (years since establishment) has a mild positive effect on sales performance.
-
----
-
-## 👤 Author
-
-**Tarteel89**  
-[GitHub Profile](https://github.com/Tarteel89)
-
----
+👤 Author
+Tarteel89 — GitHub Profile
 
 ## 📄 License
 
