@@ -65,7 +65,7 @@ Expanding in Tier 3 can be an opportunity rather than a risk. Competition in Tie
 
 >Three regression models were trained and evaluated on a held-out test set:
 | Model | Train R² | Test R² | Fit Assessment |
-|---|---|---|---|
+|---    |---       |---       |---            |
 | Linear Regression | ~0.56 | ~0.55 | Slight underfit — too simple for this data |
 | Random Forest (Default) | ~0.94 | ~0.59 | Overfitting — memorises training data |
 | **Random Forest (Tuned)** | **~0.80** | **~0.61** | **Best balance — recommended model** |
