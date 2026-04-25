@@ -10,12 +10,12 @@ The final model enables retailers to anticipate sales performance by store type,
 💡 Key Insights
 1. Item Price (MRP) is the Strongest Predictor of Sales
 A clear positive relationship exists between a product's Maximum Retail Price and its total outlet sales. Higher-priced items consistently generate more revenue across all store types and locations.
-Show Image
+(images/feat_Item_MRP_multivariate.png)
 This insight suggests that premium-priced products are reliable revenue drivers, and that retailers should ensure adequate stock levels for high-MRP items.
 
-2. Supermarkets Dramatically Outperform Grocery Stores
+3. Supermarkets Dramatically Outperform Grocery Stores
 Store type has a major impact on sales volume. Supermarket Type 3 records the highest median sales, while Grocery Stores consistently show the lowest — often by a significant margin.
-Show Image
+(images/feat_Outlet_Type_multivariate.png
 This finding highlights that store format — not just product type or price — is a critical factor in forecasting. Inventory strategies should differ substantially between store categories.
 
 📊 Model Summary & Evaluation
