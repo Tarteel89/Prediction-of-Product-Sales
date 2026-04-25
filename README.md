@@ -29,21 +29,30 @@ This finding highlights that store format — not just product type or price —
 
 
 3. Outlet_Location_Type vs Sales
+   "Where is the best place to open a new store?"
+From the plot, you can see that Tier 3 — smaller cities — have sales that are comparable or sometimes higher than Tier 1 big cities. This is surprising to many people because common sense says big cities = more sales, but the data says otherwise.
+This means for business owners:
+
+Expanding in Tier 3 can be an opportunity rather than a risk. Competition in Tier 1 is higher and can eat into profits
+Opening costs in Tier 3 are lower + similar sales = better profit margin
 ![Outlet Location vs Sales](images/feat_Outlet_Location_Type_multivariate.png)
 
 Box plot comparing sales across Tier 1, 2, and 3 cities, revealing how store location affects product performance.
 
 
 4. Distribution of Item Outlet Sales
+  Histogram of the target variable showing a right-skewed distribution, indicating that most items have moderate sales with a few high-performing outliers.
+ 
 ![Sales Distribution](images/histogram.png)
 
-Histogram of the target variable showing a right-skewed distribution, indicating that most items have moderate sales with a few high-performing outliers.
 
 
 5. Correlation Heatmap
+  Shows the correlation between all numerical features and the target variable `Item_Outlet_Sales`. `Item_MRP` shows the strongest positive correlation with sales.
+
 ![Correlation Heatmap](images/heatmap.png)
 
-Shows the correlation between all numerical features and the target variable `Item_Outlet_Sales`. `Item_MRP` shows the strongest positive correlation with sales.
+
 
 
 
