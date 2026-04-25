@@ -53,7 +53,7 @@
 
 ### 5. Correlation Heatmap
   
->![Correlation Heatmap](images/heatmap.png)
+>![Correlation Heatmap](images/correlation_heatmap.png)
 
 
 
