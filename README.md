@@ -51,11 +51,12 @@ Expanding in Tier 3 can be an opportunity rather than a risk. Competition in Tie
 
 
 
-# 5. Correlation Heatmap
+## 5. Correlation Heatmap
   
 ![Correlation Heatmap](images/heatmap.png)
 
 Shows the correlation between all numerical features and the target variable `Item_Outlet_Sales`. `Item_MRP` shows the strongest positive correlation with sales.
+
 
 
 
